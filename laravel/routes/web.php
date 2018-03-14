@@ -39,6 +39,7 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin
     Route::resource('user', 'UserController');
     
     //后台分类管理
+    Route::resource('types','TypesController');
     
 });
 //登陆路由

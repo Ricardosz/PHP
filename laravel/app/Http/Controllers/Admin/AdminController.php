@@ -174,7 +174,7 @@ class AdminController extends Controller
         // 删除数据
 
         if (\DB::table("admin")->delete($id)) {
-            return "1";
+            return 1;
         }else{
             return 0;
         }
