@@ -10,37 +10,25 @@ use App\Http\Requests;
 class UserController extends Controller
 {
     //用户管理首页
-    public function index()
+    public function index(Request $request)
     {
-      return view("admin.user.index");
+        $search=$request->input('search');
+        if($search)
+        {
+           //获取总数据
+            $tot = \DB::table("user")->where("tel",'=',$search)->count();
+            //从数据库中读取数据
+           $data = \DB::table("user")->where("tel",'=',$search)->paginate(10);
+       }else {
+            //获取总数据
+            $tot = \DB::table("user")->count();
+           //从数据库中读取数据
+           $data = \DB::table("user")->paginate(10);
+
+       }
+      return view("admin.user.index")->with('data',$data)->with('tot',$tot);
     }
 
-    //添加页面 get
-    public function  create()
-    {
-        return view("admin.user.add");
-    }
 
-    //插入操作 post admin/user
-    public function  store()
-    {
 
-    }
-
-    //修改页面 admin/user/{admin}/edit get
-    public function  edit()
-    {
-        return view("admin.user.edit");
-    }
-
-    //更新 admin/user/{admin}    put
-    public function update()
-    {
-
-    }
-    //删除 admin/user/{admin}
-    public function  destroy()
-    {
-
-    }
 }
