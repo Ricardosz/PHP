@@ -142,7 +142,7 @@
 			<!-- 系统管理 -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title"><span class="glyphicon glyphicon-certificate"></span> 系统管理</h2>
+					<h2 class="panel-title" id="sys"><span class="glyphicon glyphicon-certificate"></span> 系统管理</h2>
 				</div>
 				<ul class="list-group">
 					<li class="list-group-item"><a href="/admin/sys/config">系统配置</a></li>

@@ -55,9 +55,10 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin
 //登陆路由
 Route::get('admin/login','Admin\LoginController@index');
 //验证码
-
 Route::get('admin/yzm','Admin\LoginController@yzm');
 
+//文件上传
+Route::post('admin/shangchuan','Admin\CommonController@upload');
 
     
     
