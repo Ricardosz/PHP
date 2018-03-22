@@ -41,6 +41,25 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin
     //后台分类管理
     Route::resource('types','TypesController');
 
+    //后台商品管理
+    Route::resource("goods","GoodsController");
+
+    //后台订单管理
+    Route::get("orders","OrdersController@index");
+            //后台查看订单详情
+            Route::get("orders/list","OrdersController@lists");
+            //后台查看收货地址
+            Route::get("orders/addr","OrdersController@addr");
+            //修改订单状态
+            Route::any("orders/edit","OrdersController@edit");
+            //订单状态
+            Route::get("orders/statu","OrdersController@statuList");
+            //订单状态修改
+            Route::post("orders/statu/edit","OrdersController@statuEdit");
+
+     //后台评论管理
+    Route::get("comment","CommentController@index");
+    Route::post("comment/ajaxStatu","CommentController@ajaxStatu");
     //后台系统管理
         //系统管理
         Route::resource("sys/config","ConfigsController");
@@ -50,15 +69,24 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin
         Route::resource("sys/ads","AdsController");
         //分类广告管理
         Route::resource("sys/types","TypesAdsController");
-    
+    //缓存
+    Route::get("Huancun","HuancunController@index");
 });
+
 //登陆路由
 Route::get('admin/login','Admin\LoginController@index');
+    //登陆操作
+    Route::post("admin/check","Admin\LoginController@check");
+    //注销
+    Route::get("admin/logout","Admin\LoginController@logout");
+
 //验证码
 Route::get('admin/yzm','Admin\LoginController@yzm');
 
 //文件上传
 Route::post('admin/shangchuan','Admin\CommonController@upload');
 
+//清除缓存
+Route::get('admin/flush','Admin\IndexController@flush');
     
     

@@ -9,12 +9,14 @@
 			<li class="active">分类广告列表</li>
 
 			<button class="btn btn-primary btn-xs pull-right"><span class="glyphicon glyphicon-refresh"></span></button>
+
 		</ol>
 
 		<!-- 面版 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<button class="btn btn-danger"> 会员展示</button>
+				<button class="btn btn-danger"> 广告展示</button>
+                <a href="/admin/sys/types/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加分类广告</a>
 				<p class="pull-right tots" >共有 条数据</p>
 				<form action="/admin/user" class="form-inline pull-right">
 					<div class="form-group">
@@ -27,16 +29,36 @@
 
 			</div>
 			<table class="table-bordered table table-hover">
-				<th>ID</th>
-				<th>电话号码</th>
-				<th>邮箱</th>
-				<th>注册时间</th>
-				<th>状态</th>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>ID</th>
+				<th>图片</th>
+				<th>标题</th>
+				<th>类型</th>
+				<th>所属分类</th>
+                <th>操作</th>
 
+                @foreach($data as $value)
+                    <tr>
+                        <td><input type="checkbox" name=""></td>
+                        <td>{{$value->id}}</td>
+                        <td><img src="/Uploads/TypesAds/{{$value->img}}" width="200px"></td>
+                        <td>{{$value->title}}</td>
+                        <td>@if($value->type)
+                            大图
+                            @else
+                                小图
+                            @endif
+                            </td>
+                        <td>{{$value->name}}</td>
+                        <td><a href="#" onclick="edit({{$value->id}})" data-toggle="modal" data-target="#edit" class="glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;&nbsp;<a href="#" onclick="deletes(this,{{$value->id}})" class="glyphicon glyphicon-trash"></a></td>
+
+                    </tr>
+                    @endforeach
 
 			</table>
 			<!-- 分页效果 -->
 			<div class="panel-footer">
+                {{ $data->links() }}
 
 			</div>
 		</div>

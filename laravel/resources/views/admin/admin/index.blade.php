@@ -16,7 +16,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 批量删除</button>
-                <!-- <a href="/admin/admin/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a> -->
+                <!--  <a href="/admin/admin/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a>-->
                 <a href="javascript:;" data-toggle="modal" data-target="#add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a>
 
                 <p class="pull-right tots" >共有 <span id="tot">{{$tot}}</span> 条数据</p>
@@ -77,7 +77,7 @@
                     <form action="" onsubmit="return false;" id="formAdd">
                         <div class="form-group">
                             <label for="">用户名</label>
-                            <input type="text" name="name" class="form-control" placeholder="请输入原密码">
+                            <input type="text" name="name" class="form-control" placeholder="请输入用户名">
                             <div id="userInfo">
 
                             </div>

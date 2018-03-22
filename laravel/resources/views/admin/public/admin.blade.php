@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -58,14 +58,14 @@
 			<!-- 出logo以外 -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-refresh"></span>清除缓存</a></li>
+					<li><a href="/admin/flush"><span class="glyphicon glyphicon-refresh"></span>清除缓存</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">后台管理<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Admin</a></li>
+							<li><a href="#">{{session("AdminUserInfo.name")}}</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#editPass">修改密码</a></li>
 							<li><a href="#">前台首页</a></li>
-							<li><a href="#">退出</a></li>
+							<li><a href="/admin/logout">退出</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -114,28 +114,29 @@
 			<!-- 商品管理 -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title"><span class="glyphicon glyphicon-gift"></span> 商品管理</h2>
+					<h2 class="panel-title" id="goods"><span class="glyphicon glyphicon-gift"></span> 商品管理</h2>
 				</div>
 				<ul class="list-group">
-					<li class="list-group-item"><a href="">商品列表</a></li>
+					<li class="list-group-item"><a href="/admin/goods">商品列表</a></li>
 				</ul>
 			</div>
 			<!-- 订单管理 -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span> 订单管理</h2>
+					<h2 class="panel-title" id="orders"><span class="glyphicon glyphicon-list-alt"></span> 订单管理</h2>
 				</div>
 				<ul class="list-group">
-					<li class="list-group-item"><a href="">订单列表</a></li>
+					<li class="list-group-item"><a href="/admin/orders">订单列表</a></li>
+					<li class="list-group-item"><a href="/admin/orders/statu">订单状态列表</a></li>
 				</ul>
 			</div>
 			<!-- 评论管理 -->、
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h2 class="panel-title"><span class="glyphicon glyphicon-envelope"></span> 评论管理</h2>
+					<h2 class="panel-title" id="comment"><span class="glyphicon glyphicon-envelope"></span> 评论管理</h2>
 				</div>
 				<ul class="list-group">
-					<li class="list-group-item"><a href="">评论列表</a></li>
+					<li class="list-group-item"><a href="/admin/comment">评论列表</a></li>
 				</ul>
 			</div>
 

@@ -14,7 +14,8 @@
 		<!-- 面版 -->
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<button class="btn btn-danger"> 会员展示</button>
+				<button class="btn btn-danger"> 广告展示</button>
+                <a href="/admin/sys/ads/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加广告</a>
 				<p class="pull-right tots" >共有 条数据</p>
 				<form action="/admin/user" class="form-inline pull-right">
 					<div class="form-group">
@@ -27,17 +28,31 @@
 
 			</div>
 			<table class="table-bordered table table-hover">
+                <th><input type="checkbox" name="" id=""></th>
 				<th>ID</th>
-				<th>电话号码</th>
-				<th>邮箱</th>
-				<th>注册时间</th>
-				<th>状态</th>
+				<th>商品图片</th>
+				<th>标题</th>
+				<th>跳转链接</th>
+				<th>排序</th>
+				<th>操作</th>
+
+                @foreach($data as $value)
+                    <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>{{$value->id}}</td>
+                    <td><img src="/Uploads/Ads/{{$value->img}}" width="200px" height="100px"></td>
+                    <td>{{$value->title}}</td>
+                    <td>{{$value->href}}</td>
+                    <td>{{$value->sort}}</td>
+                    <td><a href="#" onclick="edit({{$value->id}})" data-toggle="modal" data-target="#edit" class="glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;&nbsp;<a href="#" onclick="deletes(this,{{$value->id}})" class="glyphicon glyphicon-trash"></a></td>
+                    </tr>
+                    @endforeach
 
 
 			</table>
 			<!-- 分页效果 -->
 			<div class="panel-footer">
-
+                {{ $data->links() }}
 			</div>
 		</div>
 	</div>
