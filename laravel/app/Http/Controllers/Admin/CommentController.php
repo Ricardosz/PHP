@@ -36,6 +36,5 @@ class CommentController extends Controller
            {
                return 0;
            }
-
     }
 }

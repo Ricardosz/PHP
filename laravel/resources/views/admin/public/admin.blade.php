@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>联想 后台管理系统</title>
+	<title>后台管理系统</title>
 	<link rel="shortcut icon" href="/style/admin/img/1.png">
 	<link rel="stylesheet" href="/style/admin/bs/css/bootstrap.min.css">
 	<script src="/style/admin/bs/js/jquery.min.js"></script>

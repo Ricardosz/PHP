@@ -16,7 +16,6 @@ class SliderController extends Controller
         //获取数据总数
         $tot=\DB::table('slider')->count();
         $data=\DB::table('slider')->paginate(10);
-
         //加载页面
         return view("admin.sys.Slider.index")->with('tot',$tot)->with('data',$data);
     }
@@ -34,7 +33,6 @@ class SliderController extends Controller
             'orders'=>'required',
             'img'=>'required',
         ];
-
 
         // 表单验证的提示信息
 

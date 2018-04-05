@@ -11,20 +11,52 @@
 |
 */
 //前台路由
-  
-  //主页
-  Route::get("/",'Home\IndexController@index');
-  
-  //分类页面
-  Route::get("/types/{id}",'Home\TypesController@index');
-  
-  //商品详情页面 
-  Route::get('/goods/{id}','Home\GoodsController@index');
-  
+    //主页
+    Route::get("/",'Home\IndexController@index');
+    //分类页面
+    Route::get("/types/{id}",'Home\TypesController@index');
+    //商品详情页面
+    Route::get('/goods/{id}','Home\GoodsController@index');
+    //前台登陆
+    Route::get('/login','Home\LoginController@index');
+    //前台注册
+    Route::get('/reg','Home\RegController@index');
+    //处理注册
+    Route::post('/regCheck','Home\RegController@check');
+    //发送邮件
+    Route::get('SendEmail','Home\RegController@SendEmail');
+    //激活地址
+    Route::get('activate/{id}/{token}','Home\RegController@activate');
+    //验证码
+    Route::get('/yzm','Home\RegController@yzm');
+    //登陆操作
+    Route::post("/check","Home\LoginController@check");
+    //退出
+    Route::get("/logout","Home\LoginController@logout");
+    //找回密码
+    Route::any("/findPwd","Home\LoginController@findPwd");
+    //修改密码
+    Route::any('/savePwd/{id}/{token}',"Home\LoginController@savePwd");
+    //购物车页面
+    Route::get('car','Home\CarController@index');
+    //加入购物车
+    Route::get('addCar','Home\CarController@addCar');
+    //购物车Ajax调整数量
+    Route::post('CarAdd','Home\CarController@CarAdd');
+    Route::post('CarCut','Home\CarController@CarCut');
+    //购物车删除
+    Route::post('CarDel','Home\CarController@CarDel');
+    //结算
+    Route::post('Settlement','Home\PayController@Settlement');
+    //生成订单
+    Route::post('orders','Home\OrderController@orders');
+    //支付
+    Route::get('pay/{code}','Home\PayController@Pay');
+
+
 
 //后台路由
 Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin'], function() {
-    //
     //后台首页
     Route::get('/', 'IndexController@index');
 
@@ -69,8 +101,6 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin','middleware'=>'adminLogin
         Route::resource("sys/ads","AdsController");
         //分类广告管理
         Route::resource("sys/types","TypesAdsController");
-    //缓存
-    Route::get("Huancun","HuancunController@index");
 });
 
 //登陆路由

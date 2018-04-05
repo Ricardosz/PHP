@@ -41,12 +41,17 @@
    <div class="nav-right">
       <ul>
         <li>
-          <a style="position:relative" href="./shop.html">购物车 
+          <a style="position:relative" href="/car">购物车
           <span class="guo">0</span>
           </a>
         </li>
-        <li><a class="zc" href="javascript:;">注册</a><span class="gang">|</span></li>
-        <li><a class="dl"href="javascript:;">登陆</a><span class="gang">|</span></li>
+          @if(session('AdminUserInfo.id'))
+              <li><a class="zc" href="">欢迎:{{session('AdminUserInfo.email')?:session('AdminUserInfo.name')}}</a><span class="gang">|</span></li>
+              <li><a class="zc" href="/logout">退出</a><span class="gang">|</span></li>
+          @else
+              <li><a class="zc" href="/reg">注册</a><span class="gang">|</span></li>
+              <li><a class="dl"href="/login">登陆</a><span class="gang">|</span></li>
+          @endif
       </ul> 
     </div>
  </div> 
@@ -64,7 +69,7 @@
  <!-- 搜索 -->
 <div class="container search">
    <div class="search-left">
-     <a href="http://www.lenovo.com.cn"><img src="/style/home/img/5.png" alt=""></a>
+     <a href="http://shuaizai.com"><img src="/Uploads/Sys/{{config('web.logo')}}" alt=""></a>
    </div>
    <div class="search-right">
       <div class="fang">

@@ -69,4 +69,10 @@ class GoodsController extends Controller
           }
     }
 
+    //删除商品
+    public  function destroy()
+    {
+
+    }
+
 }

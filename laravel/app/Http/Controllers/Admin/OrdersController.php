@@ -47,7 +47,6 @@ class OrdersController extends Controller
         $id = $_GET['id'];
         //查询订单收货地址信息
         $data = \DB::table("addr")->find($id);
-
         //加载页面
         return view("admin.orders.addr")->with("data", $data);
     }
@@ -66,7 +65,6 @@ class OrdersController extends Controller
            }else{
                return back();
            }
-
         }
         else {
             $sid = $request->input("sid");
