@@ -15,12 +15,11 @@ class adminLogin
      */
     public function handle($request, Closure $next)
     {
-        //判断后台是否登陆
+       //判断后台是否登陆
       if(session('AdminUserInfo'))
          {
              return $next($request);
          }
         return redirect('admin/login');
-        return $next($request);
     }
 }

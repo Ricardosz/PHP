@@ -10,7 +10,7 @@
 	<div class="col-md-10">
 
 		<ol class="breadcrumb">
-			<li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+			<li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
 			<li><a href="#">系统管理</a></li>
 			<li class="active">系统配置列表</li>
 

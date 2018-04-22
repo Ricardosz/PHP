@@ -5,12 +5,21 @@
         <input type="hidden" name="id" value="{{$data->id}}">
     </div>
     <div class="form-group">
+        <label for="">用户所属角色组</label>
+        <select name="rid" class="form-control">
+            @foreach($role as $value)
+                <option value="{{$value->id}}">{{$value->display_name}}</option>
+            @endforeach()
+        </select>
+    </div>
+    <div class="form-group">
         <label for="">密码</label>
         <input type="password" name="pass" value="{{$data->pass}}" class="form-control" placeholder="请输入新密码">
         <div id="passInfo1">
 
         </div>
     </div>
+
     <div class="form-group">
         <label for="">确认密码</label>
         <input type="password" name="repass" value="{{$data->pass}}" class="form-control" placeholder="请再次输入密码">
@@ -18,16 +27,13 @@
     <div class="form-group">
         <label for="">状态</label>
         <br>
-
         @if($data->status)
-            <input type="radio" name="status"  value="0" id="">正常
-            <input type="radio" name="status" checked value="1" id="">禁用
+            <input type="radio" name="status" value="0">正常
+            <input type="radio" name="status" checked value="1">禁用
         @else
-
-            <input type="radio" name="status" checked value="0" id="">正常
-            <input type="radio" name="status" value="1" id="">禁用
+            <input type="radio" name="status" checked value="0">正常
+            <input type="radio" name="status" value="1">禁用
         @endif
-
     </div>
     <div class="form-group pull-right">
         <input type="submit" value="提交" onclick="save()" class="btn btn-success">

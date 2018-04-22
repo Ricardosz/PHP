@@ -40,7 +40,6 @@ class IndexController extends Controller
     {
         $this->delDir("../storage/framework/cache");
         $this->delDir("../storage/framework/views");
-     return redirect('admin');
-
+        return redirect('admin');
     }
 }

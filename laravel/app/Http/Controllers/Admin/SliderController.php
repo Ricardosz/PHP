@@ -35,7 +35,6 @@ class SliderController extends Controller
             'img'=>'required',
         ];
 
-
         // 表单验证的提示信息
 
         $message=[

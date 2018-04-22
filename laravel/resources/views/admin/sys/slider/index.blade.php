@@ -11,7 +11,7 @@
     <div class="col-md-10">
 
         <ol class="breadcrumb">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
             <li><a href="#">系统管理</a></li>
             <li class="active">轮播图列表</li>
 
@@ -169,7 +169,7 @@
         function deletes(obj,id){
             // 发送ajax请求
 
-            $.post("/admin/Slider/"+id,{"_token":'{{csrf_token()}}',"_method":"delete"},function(data){
+            $.post("/admin/slider/"+id,{"_token":'{{csrf_token()}}',"_method":"delete"},function(data){
                 // 判断是否成功
 
                 if (data==1) {

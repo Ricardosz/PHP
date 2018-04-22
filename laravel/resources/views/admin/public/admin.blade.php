@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>联想 后台管理系统</title>
-	<link rel="shortcut icon" href="/style/admin/img/1.png">
+	<title>后台管理系统</title>
+
 	<link rel="stylesheet" href="/style/admin/bs/css/bootstrap.min.css">
 	<script src="/style/admin/bs/js/jquery.min.js"></script>
 	<script src="/style/admin/bs/js/bootstrap.min.js"></script>
@@ -52,7 +52,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img style="display:inline" width="30px" src="/style/admin/img/1.png" alt="">   联想后台管理系统</a>
+				<a class="navbar-brand" href="/admin">   后台管理系统</a>
 			</div>
 
 			<!-- 出logo以外 -->
@@ -64,7 +64,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#">{{session("AdminUserInfo.name")}}</a></li>
 							<li><a href="#" data-toggle="modal" data-target="#editPass">修改密码</a></li>
-							<li><a href="#">前台首页</a></li>
+							<li><a href="/">前台首页</a></li>
 							<li><a href="/admin/logout">退出</a></li>
 						</ul>
 					</li>
@@ -87,9 +87,21 @@
 				</div>
 				<ul class="list-group">
 					<li class="list-group-item"><a href="/admin/admin">管理员列表</a></li>
-
+				</ul>
+				<ul class="list-group">
+					<li class="list-group-item"><a href="/admin/admin">管理员列表</a></li>
 				</ul>
 			</div>
+                <!-- 权限管理 -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2 class="panel-title" id="role"><span class="glyphicon glyphicon-tasks"></span> 权限管理</h2>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="/admin/role">角色列表</a></li>
+							<li class="list-group-item"><a href="/admin/Permissions">访问权限</a></li>
+                        </ul>
+                    </div>
 			<!-- 会员管理 -->
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -118,6 +130,7 @@
 				</div>
 				<ul class="list-group">
 					<li class="list-group-item"><a href="/admin/goods">商品列表</a></li>
+                    <li class="list-group-item"><a href="/admin/attribute">属性名列表</a></li>
 				</ul>
 			</div>
 			<!-- 订单管理 -->

@@ -5,7 +5,7 @@
     <div class="col-md-10">
 
         <ol class="breadcrumb">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
             <li><a href="#">管理员管理</a></li>
             <li class="active">管理员列表</li>
 
@@ -17,7 +17,7 @@
             <div class="panel-heading">
                 <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 批量删除</button>
                 <!--  <a href="/admin/admin/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a>-->
-                <a href="javascript:;" data-toggle="modal" data-target="#add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a>
+                <a href="#" data-toggle="modal" data-target="#add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 添加管理员</a>
 
                 <p class="pull-right tots" >共有 <span id="tot">{{$tot}}</span> 条数据</p>
                 <form action="" class="form-inline pull-right">
@@ -33,7 +33,8 @@
             <table class="table-bordered table table-hover">
                 <th><input type="checkbox" name="" ></th>
                 <th>ID</th>
-                <th>NAME</th>
+                <th>用户名</th>
+                <th>所属角色</th>
                 <th>加入时间</th>
                 <th>状态</th>
                 <th>操作</th>
@@ -43,7 +44,8 @@
                         <td><input type="checkbox" name="" ></td>
                         <td>{{$value->id}}</td>
                         <td>{{$value->name}}</td>
-                        <td>{{date('Y-m-d H:i:s',$value->time)}}</td>
+                        <td>{{$value->display_name}}</td>
+                        <td>{{date('Y-m-d H:i:s',$value->updated_time)}}</td>
 
                         @if($value->status)
                             <td><span class="btn btn-danger" onclick="status(this,{{$value->id}},1)">禁用</span></td>
@@ -78,10 +80,18 @@
                         <div class="form-group">
                             <label for="">用户名</label>
                             <input type="text" name="name" class="form-control" placeholder="请输入用户名">
-                            <div id="userInfo">
-
-                            </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="">用户所属角色组</label>
+                            <select name="rid"   class="form-control">
+                                @foreach($role as $value)
+                                    <option  value="{{$value->id}}" >{{$value->display_name}}</option>
+                                @endforeach()
+                            </select>
+                        </div>
+
+
                         <div class="form-group">
                             <label for="">密码</label>
                             <input type="password" name="pass" class="form-control" placeholder="请输入新密码">
@@ -214,6 +224,7 @@
                 })
             }
         }
+
         // ajax删除
 
         function deletes(obj,id){
@@ -248,7 +259,7 @@
 
             $.post('/admin/admin',{str:str,'_token':'{{csrf_token()}}'},function(data){
 
-                // 判断data
+              // 判断data
                 if (data==1) {
                     // 关闭弹框
                     $(".close").click();
@@ -290,6 +301,8 @@
                     alert('添加失败');
                 }
             });
+
         }
+
     </script>
 @endsection

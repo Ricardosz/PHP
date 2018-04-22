@@ -4,7 +4,7 @@
     <div class="col-md-10">
 
         <ol class="breadcrumb">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
             <li><a href="#">分类管理</a></li>
             <li class="active">分类列表</li>
 
@@ -65,7 +65,7 @@
                         @else
                             <td><span class="btn btn-danger">否</span></td>
                         @endif
-                        <td><a href="/admin/types/1/edit" class="glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;&nbsp;
+                        <td><a href="#" onclick="edit({{$value->id}})" class="glyphicon glyphicon-pencil"></a>&nbsp;&nbsp;&nbsp;
                             <a href="#" onclick="del({{$value->id}}) " class="glyphicon glyphicon-trash"></a></td>
                     </tr>
                 @endforeach
@@ -75,13 +75,7 @@
             <div class="panel-footer">
                 <nav style="text-align:center;">
                     <ul class="pagination">
-                        <li><a href="#">&laquo;</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
+                      
                     </ul>
                 </nav>
 
@@ -90,6 +84,18 @@
     </div>
 
     <script>
+        function edit(id){
+            // 发送ajax请求
+            $.get("/admin/types/"+id+"/edit",{},function(data){
+
+                if (data) {
+
+                    $("#body").html(data);
+                };
+
+            });
+
+        }
         //删除
         function del(id) {
           if(confirm("您确认要删除吗?"))

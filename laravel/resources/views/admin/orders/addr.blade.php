@@ -43,10 +43,6 @@
                     <td>详细信息</td>
                     <td>{{$data->addrInfo}}</td>
                 </tr>
-                <tr>
-                    <td>邮箱</td>
-                    <td>{{$data->email}}</td>
-                </tr>
 
 
 			</table>

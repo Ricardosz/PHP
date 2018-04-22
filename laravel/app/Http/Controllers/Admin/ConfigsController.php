@@ -25,7 +25,6 @@ class ConfigsController extends Controller
         //获取数据
         $arr=$request->except("_token",'oldLogo');
         //写入配置文件中
-
         $str=var_export($arr,true);
         $str1="<?php return ".$str."?>";
         //写入到指定位置

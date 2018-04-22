@@ -26,12 +26,12 @@
 			<form action="">
 				<div class="form-group">
 					<label for="">User</label>
-					<input type="text" name="" class="form-control" id="">
+					<input type="text" name="" class="form-control" >
 				</div>
 
 				<div class="form-group">
 					<label for="">PASS</label>
-					<input type="password" name="" class="form-control" id="">
+					<input type="password" name="" class="form-control" >
 				</div>
 
 				<div class="form-group">

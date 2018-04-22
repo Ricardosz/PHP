@@ -12,7 +12,6 @@ class AdsController extends Controller
 {
     public  function  index()
     {
-
         $data=\DB::table("ads")->orderby("sort","desc")->paginate(10);
         //加载页面
         return view("admin.sys.ads.index")->with("data",$data);
@@ -21,7 +20,6 @@ class AdsController extends Controller
     //广告添加
     public function  create()
     {
-
         return view("admin.sys.ads.add");
     }
 
@@ -38,6 +36,23 @@ class AdsController extends Controller
             {
                 return back();
             }
+    }
+
+    public function destroy($id)
+    {
+        // 删除数据
+        $result=$this->DelAds($id);
+        return $result;
+    }
+
+    public function DelAds($id)
+    {
+        $result=(\DB::transaction(function ()use($id) {
+            \DB::table("ads")->delete($id);
+            return 1;
+        }));
+        return $result;
+
     }
 
 

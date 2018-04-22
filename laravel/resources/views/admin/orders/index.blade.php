@@ -4,7 +4,7 @@
 	<div class="col-md-10">
 
 		<ol class="breadcrumb">
-			<li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+			<li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
 			<li><a href="#">订单管理</a></li>
 			<li class="active">订单列表</li>
 
@@ -40,7 +40,7 @@
                         <td>{{$value->name}}</td>
                         <td><a href="/admin/orders/addr?id={{$value->aid}}">收货人信息</a></td>
                         <td>{{$value->ssname}}</td>
-                        <td>{{date("Y-m-d H:i:s",$value->time)}}</td>
+                        <td>{{$value->time}}</td>
                         <td>
                             @if($value->sid==6)
                                 <a href="#">修改状态</a>

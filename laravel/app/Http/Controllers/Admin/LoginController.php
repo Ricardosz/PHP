@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 //后台登陆控制器
 class LoginController extends Controller
 {
@@ -19,9 +20,7 @@ class LoginController extends Controller
     //验证码
     public function yzm()
     {
-        require_once("../resources/code/Code.class.php");
-        //实例化
-        $code=new \Code();
+        $code=\App\Http\Service\Com\YzmService::CreateYzm();
         //生成验证码
         $code->make();
     }
@@ -29,31 +28,39 @@ class LoginController extends Controller
     //登陆操作
     public  function check(Request $request)
     {
+        //重构后
+    /*     $status=1;
+        $result=\App\Http\Service\Com\LoginService::Login($request,$status);
+        if ($result==1)
+        {
+            return redirect('admin');
+        }
+        else{
+            return back()->with($result);
+        }
+    */
         //获取数据
-        $name=$request->input('name');
+       $name=$request->input('name');
         $pass=$request->input('pass');
         $uccode=$request->input('code');
         //验证验证码
-
-        require_once("../resources/code/Code.class.php");
-        //实例化
-        $code=new \Code();
+        $code=\App\Http\Service\Com\YzmService::CreateYzm();
         //获取session
         $oldcode=$code->get();
         //检测验证码
         if (strtoupper($uccode)==$oldcode)
         {
             //验证密码
-            $data=\DB::table('admin')->where([['name','=',$name],['status','=',0]])->first();
+            $data=\DB::table('user')->where([['name','=',$name],['status','=',0]])->first();
             if ($data){
                 if ($pass==\Crypt::decrypt($data->pass))
                 {
                     //声明数组
                     $arr=[];
-                    $arr['lasttime']=time();
+                    $arr['updated_time']=time();
                     $arr['count']=++$data->count;
                     //更新登录信息
-                    \DB::table('admin')->where('id',$data->id)->update($arr);
+                    \DB::table('user')->where('id',$data->id)->update($arr);
                     //存session
                     session(['AdminUserInfo.name'=>$data->name]);
                     session(['AdminUserInfo.id'=>$data->id]);
@@ -63,13 +70,15 @@ class LoginController extends Controller
                     {
                         return back()->with("error","密码错误");
                     }
-            }else{
+            }
+            else{
                 return back()->with("error","用户名不存在");
             }
 
         }else{
             return back()->with("error",'验证码错误');
         }
+
     }
 
     //注销

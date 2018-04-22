@@ -28,6 +28,7 @@
 			</div>
 			<table class="table-bordered table table-hover">
 				<th>ID</th>
+				<th>用户名</th>
 				<th>电话号码</th>
 				<th>邮箱</th>
 				<th>注册时间</th>
@@ -35,9 +36,10 @@
 				@foreach($data as $value)
 				<tr>
 					<td>{{$value->id}}</td>
+					<td>{{$value->name}}</td>
 					<td>{{$value->tel}}</td>
 					<td>{{$value->email}}</td>
-					<td>{{date('Y-m-d H:i:s',$value->time)}}</td>
+					<td>{{date('Y-m-d H:i:s',$value->updated_time)}}</td>
                     @if($value->status==0)
                         <td><span class="btn btn-primary">未激活</span></td>
                         @elseif($value->status==1)

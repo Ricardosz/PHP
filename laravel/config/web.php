@@ -1,7 +1,7 @@
 <?php return array (
-  'title' => '2',
-  'keywords' => '9',
-  'description' => '7',
+  'title' => '电脑外设电子商城',
+  'keywords' => '外设电子商城',
+  'description' => '电脑外设电子商城',
   'baidu' => '99',
-  'logo' => '15213840691344258833.jpg',
+  'logo' => '1524261589559763342.jpg',
 )?>

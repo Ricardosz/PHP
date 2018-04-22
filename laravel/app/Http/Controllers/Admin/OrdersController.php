@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\model\order;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,8 +34,9 @@ class OrdersController extends Controller
         //获取订单号
         $code = $request->input("code");
         //查询订单号下所有商品
-        $data = \DB::table("orders")->select("orders.*", "goods.title", "goods.img")
+        $data = \DB::table("orders")->select("orders.*", "sku.title", "sku.img","goods.name")
             ->join("goods", "goods.id", "=", "orders.gid")
+            ->join("sku","sku.gid","=","goods.id")
             ->where("code", $code)->get();
         //数据展现到页面
         return view("admin.orders.lists")->with("data", $data);
@@ -47,7 +49,6 @@ class OrdersController extends Controller
         $id = $_GET['id'];
         //查询订单收货地址信息
         $data = \DB::table("addr")->find($id);
-
         //加载页面
         return view("admin.orders.addr")->with("data", $data);
     }
@@ -66,7 +67,6 @@ class OrdersController extends Controller
            }else{
                return back();
            }
-
         }
         else {
             $sid = $request->input("sid");

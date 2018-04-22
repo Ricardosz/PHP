@@ -4,7 +4,7 @@
     <div class="col-md-10">
 
         <ol class="breadcrumb">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
             <li><a href="#">评论管理</a></li>
             <li class="active">评论列表</li>
 

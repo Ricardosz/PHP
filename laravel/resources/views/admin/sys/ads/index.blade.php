@@ -4,7 +4,7 @@
 	<div class="col-md-10">
 
 		<ol class="breadcrumb">
-			<li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+			<li><a href="/admin"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
 			<li><a href="#">系统管理</a></li>
 			<li class="active">广告列表</li>
 
@@ -58,3 +58,27 @@
 	</div>
 
 @endsection
+
+<script>
+    function deletes(obj,id){
+        // 发送ajax请求
+
+        $.post("/admin/ads/"+id,{"_token":'{{csrf_token()}}',"_method":"delete"},function(data){
+            // 判断是否成功
+
+            if (data==1) {
+                // 移除数据
+
+                $(obj).parent().parent().remove();
+
+                // 数量计算
+
+                tot=Number($("#tot").html());
+
+                $("#tot").html(--tot);
+            }else{
+                alert('删除失败');
+            }
+        })
+    }
+</script>

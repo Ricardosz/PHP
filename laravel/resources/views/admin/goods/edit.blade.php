@@ -1,47 +1,33 @@
-@extends('admin.public.admin')
 
-@section('main')
-<!-- 内容 -->
-<div class="col-md-10">
-	
-	<ol class="breadcrumb">
-		<li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-		<li><a href="#">分类管理</a></li>
-		<li class="active">分类修改</li>
+<form action="" onsubmit="return false;" id="formEdit">
+    <div class="form-group">
+        <label for="">商品名称</label>
+        <input type="text" name="gname"  value="{{$data->gname}}" class="form-control" placeholder="请输入商品名称">
+        <input type="hidden" name="gid" value="{{$data->gid}}">
+    </div>
+    <div class="form-group">
+        <label for="">商品所属分类</label>
+        <select name="cid"   class="form-control">
+            <option value="">{{ $data->cname}}</option>
+            @foreach( $data->type_name as $val)
+                @if($val->size==2)
+                    <option value="{{$val->id}}">{{$val->html}}</option>
+                @else
+                    <option  value="{{$val->id}}" disabled>{{$val->html}}</option>
+                @endif
+            @endforeach()
+        </select>
+    </div>
 
-		<button class="btn btn-primary btn-xs pull-right"><span class="glyphicon glyphicon-refresh"></span></button>
-	</ol>
+    <div class="form-group">
+        <label for="">总库存</label>
+        <input type="text" name="num" value="{{$data->num}}" class="form-control" disabled>
+    </div>
 
-	<!-- 面版 -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<a href="index.html" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 用户页面</a>
-			<a href="" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> 修改用户</a>
-			
-			
+    <div class="form-group pull-right">
+        <input type="submit" value="提交" onclick="save()" class="btn btn-success">
+        <input type="reset" id="reset1" value="重置" class="btn btn-danger">
+    </div>
 
-
-		</div>
-		<div class="panel-body">
-			<form action="">
-				<div class="form-group">
-					<label for="">User</label>
-					<input type="text" name="" class="form-control" id="">
-				</div>
-
-				<div class="form-group">
-					<label for="">PASS</label>
-					<input type="password" name="" class="form-control" id="">
-				</div>
-
-				<div class="form-group">
-					<input type="submit" value="提交" class="btn btn-success">
-					<input type="reset" value="重置" class="btn btn-danger">
-				</div>
-
-			</form>
-		</div>
-		
-	</div>
-</div>
-@endsection
+    <div style="clear:both"></div>
+</form>
