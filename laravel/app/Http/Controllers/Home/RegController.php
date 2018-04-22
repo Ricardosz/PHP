@@ -1,9 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Home;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+=======
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Monolog\Handler\IFTTTHandler;
+use Symfony\Component\VarDumper\Dumper\DataDumperInterface;
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
 //注册控制器
 class RegController extends Controller
@@ -17,18 +25,35 @@ class RegController extends Controller
     //验证码
     public function yzm()
     {
+<<<<<<< HEAD
         $code=\App\Http\Service\Com\YzmService::CreateYzm();
+=======
+        require_once("../resources/code/Code.class.php");
+        //实例化
+        $code = new \Code();
+        //生成验证码
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         $code->make();
     }
 
     //处理操作
     public function check(Request $request)
     {
+<<<<<<< HEAD
 
         $arr = $request->except("_token");
         $code= \App\Http\Service\Com\YzmService::CreateYzm();
         $oldcode = $code->get();
         //验证验证码
+=======
+        $arr = $request->except("_token");
+        //验证验证码
+        require_once("../resources/code/Code.class.php");
+        //实例化
+        $code = new \Code();
+        //获取session
+        $oldcode = $code->get();
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         if (strtoupper($arr['Code']) == $oldcode) {
             //验证密码位数
             if (strlen($arr['pass']) >= 6 && strlen($arr['pass']) <= 12) {
@@ -43,16 +68,25 @@ class RegController extends Controller
                             //注册
                             $data = array();
                             $data['email'] = $arr['email'];
+<<<<<<< HEAD
                             $data['created_time'] =date('Y-m-d H:i:s', time());
+=======
+                            $data['time'] = time();
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                             $data['status'] = 0;
                             $data['token'] = str_random(50);
                             $data['pass'] = \Crypt::encrypt($arr['pass']);
                             $Email = $arr['email'];
                             $arr = explode("@", $Email);
                             $href = "mail" . $arr[1];
+<<<<<<< HEAD
                             $news="恭喜您注册成功，请立即激活账号";
                             if ($id = \DB::table("user")->insertGetID($data)) {
                                 \App\Http\Service\Com\EmailService::SendEmail($id, $data['token'], $Email,$news);
+=======
+                            if ($id = \DB::table("user")->insertGetID($data)) {
+                                $this->SendEmail($id, $data, $Email);
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                                 $arr = explode("@", $Email);
                                 $href = "mail." . $arr[1];
                                 return view('home.activate')->with("href", $href);
@@ -76,6 +110,18 @@ class RegController extends Controller
     }
 
 
+<<<<<<< HEAD
+=======
+    //发送邮件
+    public function SendEmail($id, $data, $Email)
+    {
+        //发送邮件
+        \Mail::send("Email.index", ["id" => $id, 'token' => $data['token']], function ($message) use ($Email) {
+            $message->subject("恭喜您注册成功，请立即激活账号");
+            $message->to($Email);
+        });
+    }
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
     //激活账户
     public function activate($id, $token)

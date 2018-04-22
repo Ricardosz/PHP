@@ -2,7 +2,11 @@
     <div class="top_cont">
 
         <div class="top_login_r top_red">  </div>
+<<<<<<< HEAD
             @if(!session('UserInfo.id'))
+=======
+            @if(!session('AdminUserInfo.id'))
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         <ul class="top_login top_red">
             <li class="top_loginbtn" id="LoginID" style="display: none;">
                 <a href="/login" class="login">登录</a>
@@ -14,7 +18,11 @@
 
         @else
         <div class="top_phone" style="" id="UserInfo">
+<<<<<<< HEAD
             <div class="top_phone_title"><span id="UserNameID">{{session('UserInfo.email')?:session('UserInfo.name')}}</span>
+=======
+            <div class="top_phone_title"><span id="UserNameID">{{session('AdminUserInfo.email')?:session('AdminUserInfo.name')}}</span>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 <a href="#" class=" top_usepng top_downs"></a>
             </div>
 

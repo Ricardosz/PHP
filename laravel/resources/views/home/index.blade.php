@@ -13,6 +13,7 @@
 <body>
 <!-- 头 -->
 @include("home.public.header")
+<<<<<<< HEAD
 <!-- 中 -->
 <!-- <div class="middle">
  <!-- 搜索 -->
@@ -35,6 +36,49 @@
 <div class="container menus">
 
    
+=======
+
+<!-- 菜单 -->
+<div class="container menus">
+    <div class="menus-img">
+        <a><img src="/style/home/img/4.jpg" alt=""></a>
+    </div>
+    <div class="menus-dao">
+        <ul>
+            <li><a class=xp>小新Air 13 Pro
+                    <span class="pro"></span>
+                </a>
+            </li>
+            <li class="bk">
+                <a>爆款</a>
+                <ul class="bk-bao">
+                    <li><a href="">小新Air 12</a></li>
+                    <li><a href="">小新Air13 Pro</a></li>
+                    <li><a href="">小新310</a></li>
+                    <li><a href="">拯救者游戏本</a></li>
+                    <li><a href="">ThinkPad New S2</a></li>
+                    <li><a href="">看家宝Snowman</a></li>
+                    <li><a href="">小新700</a></li>
+                    <li><a href="">MIIX5</a></li>
+                    <li><a href="">YOGA BOOK</a></li>
+                </ul>
+            </li>
+            <li><a class="lx">联想合伙人<span class="hehou"></span></a></li>
+            <li><a>0元试用</a></li>
+            <li><a>以旧换新</a></li>
+            <li><a>私人定制</a></li>
+            <li class="fw"><a>服务</a>
+                <ul class="fuwu">
+                    <li><a href="">服务支持</a></li>
+                    <li><a href="">驱动下载</a></li>
+                    <li><a href="">联想知识库</a></li>
+                </ul>
+            </li>
+            <li><a>社区</a></li>
+            <!-- <li></li> -->
+        </ul>
+    </div>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 </div>
 <!-- 监听 -->
 <div class="jianting">
@@ -134,12 +178,20 @@
         </ul>
     </div>
     <div class="clear"></div>
+<<<<<<< HEAD
     <div class="center" >
+=======
+    <div class="center">
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
         <ul class='imgs'>
             @foreach($slider as $key=>$value)
                 @if($key==0)
+<<<<<<< HEAD
                     <li class='active'><img src="/Uploads/Slider/{{$value->img}}" alt="" width="1000px" height="300px"></li>
+=======
+                    <li class='active'><img src="/Uploads/Slider/{{$value->img}}" alt=""></li>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 @else()
                     <li><img src="/Uploads/Slider/{{$value->img}}" alt=""></li>
                 @endif
@@ -158,7 +210,54 @@
         <a href="javascript:;" class="btn btn-left"></a>
         <a href="javascript:;" class="btn btn-right"></a>
     </div>
+<<<<<<< HEAD
 
+=======
+    <div class="right">
+        <div class="xin">
+            <div class="xisn">
+                <div class="horn_ring"></div>
+                <ul class="xnss">
+                    <li><a target="_blank" href="">四年延保，沸腾国庆！</a></li>
+                    <li><a target="_blank" href="">联想APP客户端乐豆抽奖大战开始啦，赶快下载抽取大奖，miix平板等着你！</a></li>
+                    <li><a target="_blank" href="">四年延保，沸腾国庆！</a></li>
+                    <li><a target="_blank" href="">联想APP客户端乐豆抽奖大战开始啦，赶快下载抽取大奖，miix平板等着你！</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 评论 -->
+        <div class="ping">
+            <h2 class="clearfix"><span>精彩讨论</span>
+                <a target="_blank" href="">更多 &gt;</a>
+            </h2>
+            <ul class="lun">
+                <li>
+                    <a target="_blank" href="">【评测】一款高颜值笔记本的告白</a>
+                </li>
+                <li>
+                    <a target="_blank" href="">【评测】Moto Z+哈苏模块≈单反体验</a>
+                </li>
+                <li>
+                    <a target="_blank" href="">【活动】分享你的怀旧珍藏赢好礼</a>
+                </li>
+                <li>
+                    <a target="_blank" href="">【体验】诠释轻薄与性能的小新 Air 13 Pro</a>
+                </li>
+                <li>
+                    <a target="_blank" href="">【小白课堂】小新笔记本还能这样玩</a>
+                </li>
+                <li>
+                    <a target="_blank" href="l">【活动】联想智能存储有奖征名</a>
+                </li>
+                <li>
+
+                    <a target="_blank" href="">【选本】新晋二合一笔记本推荐</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
 </div>
 <!-- 图片 -->
@@ -176,6 +275,10 @@
                         </a>
                     </li>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 @endforeach
             </ul>
             <a href="javascript:;" class="btn btn-left"></a>
@@ -191,11 +294,19 @@
             <ul>
                 @foreach($goods as $good)
                 <li style="width: 198px; height: 297px;">
+<<<<<<< HEAD
                     <a target="_blank" href="/goods/{{$good->gid}}/">
                         <img title="{{$good->title}}" src="/Uploads/Goods/{{$good->img}}" width="198px">
                     </a>
                     <p class="star_name">
                         <a target="_blank" title="{{$good->title}}" href="/goods/{{$good->gid}}">{{$good->title}}</a>
+=======
+                    <a target="_blank" href="/goods/{{$good->id}}">
+                        <img title="{{$good->title}}" src="/Uploads/Goods/{{$good->img}}" width="198px">
+                    </a>
+                    <p class="star_name">
+                        <a target="_blank" title="{{$good->title}}" href="/goods/{{$good->id}}">{{$good->title}}</a>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                     </p>
                     <p class="star_ad">
                         <a target="_blank" href="/goods/{{$good->id}}" title="{{$good->title}}">{{$good->info}}</a>
@@ -241,6 +352,7 @@
                 <div class="you">
                     @foreach($lou->goods as $louGoods)
                     <div class="you1 good">
+<<<<<<< HEAD
                         <a target="_blank" href="/goods/{{$louGoods->gid}}/{{$louGoods->id}}" title="{{$louGoods->title}}">
                             <img width="164" height="164" src="/Uploads/Goods/{{$louGoods->img}}" title="{{$louGoods->title}}">
                         </a>
@@ -250,6 +362,17 @@
                            {{$louGoods->title}}">{{$louGoods->info}}
                         </a>
                         <a class="money" target="_blank" href="/goods/{{$louGoods->gid}}/{{$louGoods->id}}" title="{{$louGoods->title}}">{{number_format($louGoods->price)}}元
+=======
+                        <a target="_blank" href="/goods/{{$louGoods->id}}" title="{{$louGoods->title}}">
+                            <img width="164" height="164" src="/Uploads/Goods/{{$louGoods->img}}" title="{{$louGoods->title}}">
+                        </a>
+                        <a class="good-jie" target="_blank" href="/goods/{{$louGoods->id}}" title="{{$louGoods->title}}">{{$louGoods->title}}
+                        </a>
+                        <a class="good-jie1" target="_blank" href="/goods/{{$louGoods->id}}">
+                           title="{{$louGoods->title}}">{{$louGoods->info}}
+                        </a>
+                        <a class="money" target="_blank" href="/goods/{{$louGoods->id}}" title="{{$louGoods->title}}">{{number_format($louGoods->price)}}元
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                         </a>
                         <span class="good-biao"></span>
                     </div>
@@ -269,6 +392,16 @@
             </div>
             <div class="social-tu">
                 <ul>
+<<<<<<< HEAD
+                    <li>
+                        <div class="shekuang" datatype="5" sort="1" b_i="190,212,30">
+                            <a target="_blank" href="">
+                                <img width="190" height="212" src="/style/home/img/50.jpg" class="lazy_img"></a>
+                            <div class="social-tou"></div>
+                            <div class="social-rong">
+                                <em class="social-zi" ></em>
+                                <span>联想社区</span>
+=======
                     <li>
                         <div class="shekuang" datatype="5" sort="1" b_i="190,212,30">
                             <a target="_blank" href="">
@@ -288,10 +421,25 @@
                             <div class="social-rong">
                                 <em class="social-guanwei"></em>
                                 <span>官方微信</span>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                             </div>
                         </div>
                     </li>
                     <li>
+<<<<<<< HEAD
+                        <div class="shekuang" datatype="5" sort="2" b_i="190,212,30">
+                            <a target="_blank" href="http://955.cc/muj82">
+                                <img width="190" height="212" src="/style/home/img/52.jpg" class="lazy_img"></a>
+                            <div class="social-tou"></div>
+                            <div class="social-rong">
+                                <em class="social-guanwei"></em>
+                                <span>官方微信</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+=======
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                         <div class="shekuang" datatype="5" sort="3" b_i="190,212,30">
                             <a target="_blank" href="">
                                 <img width="190" height="212" src="/style/home/img/53.jpg" class="lazy_img"></a>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Home;
 
+<<<<<<< HEAD
 use App\model\order;
+=======
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\VarDumper\Dumper\DataDumperInterface;
@@ -15,10 +18,14 @@ class PayController extends Controller
     {
         //查询当前登陆者的收货地址
         //当前用户ID
+<<<<<<< HEAD
 
         $uid=session('UserInfo.id');
 
         if (isset($uid)){
+=======
+        $uid=session('AdminUserInfo.id');
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
         //查询地址
         $addr=\DB::table("addr")->where("uid",$uid)->get();
@@ -38,12 +45,16 @@ class PayController extends Controller
                 }
             }
         }
+<<<<<<< HEAD
 
         return view('home.Settlement')->with("newshop",$newArr)->with("addr",$addr);
         }
         else{
             return redirect('/login');
         }
+=======
+       return view('home.Settlement')->with("newshop",$newArr)->with("addr",$addr)->with("addr",$addr);
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
     }
 
     //支付页面
@@ -52,6 +63,7 @@ class PayController extends Controller
         //根据订单号查找所有订单
         $orders=\DB::table("orders")->where("code",$code)->get();
 
+<<<<<<< HEAD
         return view('home.pay')->with("orders",$orders);
     }
 
@@ -68,5 +80,10 @@ class PayController extends Controller
 
 
 
+=======
+        return view('home.pay')->with($orders);
+    }
+
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
 }

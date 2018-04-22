@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "7b7e8293dda035f52369681968b1fc7f",
+=======
+    "content-hash": "a4e13fbe567a4cc55fe605aaf5094273",
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2244,7 +2248,11 @@
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/twbs/bootstrap/zipball/8a628b943cf31ca0a002c08af661a95772480225",
+=======
+                "url": "https://files.phpcomposer.com/files/twbs/bootstrap/8a628b943cf31ca0a002c08af661a95772480225.zip",
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 "reference": "8a628b943cf31ca0a002c08af661a95772480225",
                 "shasum": ""
             },

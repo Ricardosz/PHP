@@ -5,7 +5,10 @@
     <title>{{config('web.title')}}</title>
     <meta name="keywords" content="{{config('web.keywords')}}"/>
     <meta name="description" content="{{config('web.description')}}"/>
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
     <link rel="shortcut icon" href="/style/home/img/1.png">
     <link rel="stylesheet" href="/style/home/css/thinkpad.css">
 
@@ -95,6 +98,7 @@
                         <div class="icon">预售</div>
                         <span id="preselldj">定金：0</span>
                         <div id="box_djs">
+<<<<<<< HEAD
 	                        <span id="preselldjs">
                             </span><a id="presellzc" href="pd_comp/html/presell_info.html" target="_blank">预售规则</a>
                         </div>
@@ -162,13 +166,78 @@
 
                         </div>
 
+=======
+	                        <span id="
+	                        preselldjs"></span><a id="presellzc" href="pd_comp/html/presell_info.html" target="_blank">预售规则</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cx">
+                    <span class="cxix">促销信息：</span>
+                    <div class="de_sail_r">
+                        <ul class="de_sail_top">
+                            <li class="clearfix"
+                                id="xdlj">
+                                <span class="ht">下单立减</span>
+                                <span class="xjz">下单立减
+										<b class="detail_red">700.00元</b>，距离结束时间还有:<b class="detail_red" id="time">3天 2时 38 分 24秒</b>
+								  </span>
+                                <div class="clear"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <p id="n_yyks" style="display:none; color:red" class="ns_gray_less">
+                    </p>
+                    <p id="n_sgks" style="display:none; color:red" class="ns_gray_less">
+                    </p>
+                    <p id="n_fsgks" style="display:none; color:red" class="ns_gray_less">
+                    </p>
+                    <p id="n_djs" style="display:none; color:red" class="ns_gray_less"></p>
+                </div>
+            </div>
+            <div class="de_info_app clearfix">
+                <!-- <a href="javascript:;" class="de_more" id="appshow"><i class="guan de_down"></i><span>APP首单立减10元</span></a>
+                <div class="de_app_code"><img src="pd_comp/images/detail/de_code.jpg" alt="" /></div> -->
+            </div>
+
+
+            <!-- 价格下部  空白位-->
+
+            <!-- 商品规格 -->
+            <div class="xilei">
+
+                <div>
+                    <!-- ThinkPad 私人订制 -->
+
+                    <div class="xuan" style="">
+
+                    </div>
+
+                    <!-- 分期文案 -->
+                    <!-- think o2o -->
+                    <div id="city_wrap" class="de_info_section de_info_section_city" style="display:none;"></div>
+                    <div class="de_info_btn clearfix">
+                        <div class="de_info_num">
+                            <label class="i_box">
+                                <input class="pro_num J_input" type="text" value="1" id="goodsNumber">
+                                <input class="pro_add J_add" type="button">
+                                <input class="pro_less J_minus" type="button">
+                            </label>
+                            <span id="stock">有库存</span>
+                        </div>
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                         <a href="javascript:void(0);" class="de_button de_btn_buy" id="ljgm" style=""
                            event-name="PC端_产品详情页_立即购买_ThinkPad E550 20DFA08ECD"
                            latag="latag_pc_detail_orderimmediately_48639" title="立即购买">立即购买</a>
                         <a href="javascript:void(0);" class="de_button de_btn_car" id="jrgwc"
                            latag="latag_pc_detail_addshopcart_48639"
                            title="加入购物车">加入购物车</a>
+<<<<<<< HEAD
                         <input type="hidden" name="gid" value="{{$goods->gid}}">
+=======
+                        <input type="hidden" name="id" value="{{$goods->id}}">
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                     </div>
 
                     <!-- 基本信息下部  空白位-->
@@ -681,12 +750,20 @@
 <script>
     $("#jrgwc").click(function () {
         //获取商品ID
+<<<<<<< HEAD
         var id=$("input[name=gid]").val();
         //库存
         var num=$("#goodsNumber").val();
         var sid=$('input[name="sid"]:checked').val();
         //加入购物车
         window.location.href="/addCar?id="+id+"&num="+num+"&sid="+sid;
+=======
+        var id=$("input[name=id]").val();
+        //库存
+        var num=$("#goodsNumber").val();
+        //加入购物车
+        window.location.href="/addCar?id="+id+"&num="+num;
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
     })
 </script>

@@ -3,7 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>后台管理系统</title>
+<<<<<<< HEAD
 
+=======
+	<link rel="shortcut icon" href="/style/admin/img/1.png">
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 	<link rel="stylesheet" href="/style/admin/bs/css/bootstrap.min.css">
 	<script src="/style/admin/bs/js/jquery.min.js"></script>
 	<script src="/style/admin/bs/js/bootstrap.min.js"></script>

@@ -17,8 +17,12 @@ class TypesController extends Controller
     {
         $newArr = array();
         //获取顶级分类
+<<<<<<< HEAD
         foreach ($data as $key => $value)
         {
+=======
+        foreach ($data as $key => $value) {
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
             if ($value->pid == $pid) {
                 $newArr[$value->id] = $value;
                 $newArr[$value->id]->zi=$this->data($data,$value->id);
@@ -32,8 +36,17 @@ class TypesController extends Controller
     {
         //三、使用递归实现数据格式化
         $data=\DB::select("select types.*,concat(path,id) p from types order by p");
+<<<<<<< HEAD
         $arr = $this->data($data,$pid=0);
 
+=======
+        //$data = \DB::table("types")->get();
+        $arr = $this->data($data,$pid=0);
+        //四、实现树形结构
+       //$data=\DB::select("select types.*,concat(path,id) p from types order by p");
+        //查询数据
+        //$data = \DB::table('types')->orderby("sort", 'desc')->get();
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         //加载数据到页面上
         return view("admin.types.index")->with("data", $data);
     }

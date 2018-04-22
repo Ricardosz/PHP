@@ -11,7 +11,10 @@ class OrderController extends Controller
     //生成订单
     public  function orders(Request $request)
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         //收货地址
         $aid=$request->input('aid');
         //商品
@@ -19,11 +22,19 @@ class OrderController extends Controller
         //数量
         $nums=$request->input('nums');
         //当前用户ID
+<<<<<<< HEAD
         $uid=session('UserInfo.id');
         //生成订单号
         $code="DZ_".time().rand();
         //订单生成时间
         $time=date('Y-m-d H:i:s',time());
+=======
+        $uid=session('AdminUserInfo.id');
+        //生成订单号
+        $code="DZ_".time().rand();
+        //订单生成时间
+        $time=time();
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         //获取价格
         $prices=$request->input('prices');
         //生成订单
@@ -39,7 +50,10 @@ class OrderController extends Controller
             $data['gid']=$ids[$i];
             $data['num']=$nums[$i];
             $data['price']=$prices[$i];
+<<<<<<< HEAD
             $data['money']=$nums[$i]*$prices[$i];
+=======
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
             \DB::table('orders')->insert($data);
         }
         //删除session中的对应数据
@@ -57,8 +71,13 @@ class OrderController extends Controller
         }
         //重新写入session
         $request->session()->put('shop', $shop);
+<<<<<<< HEAD
 
         //跳转到支付页面
+=======
+        //跳转到支付页面
+
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         return redirect("pay/$code");
 
     }

@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 class GoodsController extends Controller
 {
     //商品详情首页
+<<<<<<< HEAD
     public function index($id,$sid=0)
     {
 
@@ -35,6 +36,15 @@ class GoodsController extends Controller
             ->join("goods","sku.gid","=","goods.id")
             ->where("sku.gid",$id)->get();
 
+=======
+    public function index($id)
+    {
+
+        //获取商品相关数据
+        $goods=\DB::table("goods")->where("id",$id)->first();
+        //获取商品图片
+        $goodsImg=\DB::table("goodsImg")->where("gid",$id)->get();
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         //查询商品对应的评论
         //评论总数
         $commentTot=\DB::table("comment")->where("gid",$id)->count();
@@ -52,18 +62,28 @@ class GoodsController extends Controller
             'GoodTot'=>$GoodTot,
             'BadTot'=>$BadTot,
             'GeneralTot'=>$GeneralTot,
+<<<<<<< HEAD
         );
 
+=======
+
+        );
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 
         //格式化数据
         $data=array(
             "goods"=>$goods,
             "goodsImg"=>$goodsImg,
             'Evaluation'=>$Evaluation,
+<<<<<<< HEAD
             'comment'=>$comment,
             'value'=>$value
         );
 
+=======
+            'comment'=>$comment
+        );
+>>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         return View("home.goods")->with($data);
     }
 }
