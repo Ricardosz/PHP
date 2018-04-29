@@ -39,7 +39,7 @@
 					<td>{{$value->name}}</td>
 					<td>{{$value->tel}}</td>
 					<td>{{$value->email}}</td>
-					<td>{{date('Y-m-d H:i:s',$value->updated_time)}}</td>
+					<td>{{$value->created_time}}</td>
                     @if($value->status==0)
                         <td><span class="btn btn-primary">未激活</span></td>
                         @elseif($value->status==1)

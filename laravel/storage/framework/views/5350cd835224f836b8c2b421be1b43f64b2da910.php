@@ -15,12 +15,12 @@
 			<div class="panel-heading">
 				<button class="btn btn-danger"> 订单展示</button>
 				<p class="pull-right tots" >共有<span><?php echo e(count($data)); ?></span> 条数据</p>
-				<form action="/admin/user" class="form-inline pull-right">
+				<form action="/admin/orders" class="form-inline pull-right">
 					<div class="form-group">
 						<input type="text" name="search" class="form-control" placeholder="请输入你要搜索的内容" id="">
 					</div>
 
-					<input type="submit" value="搜索" class="btn btn-success">
+					<input type="submit" value="搜索"   class="btn btn-success">
 				</form>
 
 

@@ -25,18 +25,11 @@ class LoginController extends Controller
         $pass = $request->input('pass');
         $uccode = $request->input('Code');
         //验证验证码
-<<<<<<< HEAD
         $code=\App\Http\Service\Com\YzmService::CreateYzm();
-=======
-        require_once("../resources/code/Code.class.php");
-        //实例化
-        $code = new \Code();
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         //获取session
         $oldcode = $code->get();
         $data = \DB::table('user')->where('email', $email)->first();
         //验证验证码
-<<<<<<< HEAD
         if (strtoupper($uccode) == $oldcode)
         {
             if ($data)
@@ -45,14 +38,6 @@ class LoginController extends Controller
                     session(['UserInfo.email' => $data->email]);
                     session(['UserInfo.name' => $data->name]);
                     session(['UserInfo.id' => $data->id]);
-=======
-        if (strtoupper($uccode) == $oldcode) {
-            if ($data) {
-                if ($pass == \Crypt::decrypt($data->pass)) {
-                    session(['AdminUserInfo.email' => $data->email]);
-                    session(['AdminUserInfo.name' => $data->name]);
-                    session(['AdminUserInfo.id' => $data->id]);
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                     return redirect(session('prevPage'));
                 } else {
                     return back();
@@ -83,18 +68,9 @@ class LoginController extends Controller
             $Email = $_POST['email'];
             //获取数据
             $data = \DB::table('user')->where('email', $Email)->first();
-<<<<<<< HEAD
             $news="找回密码";
             if ($data) {
                 \App\Http\Service\Com\EmailService::SendEmail($data->id, $data->token, $Email,$news);
-=======
-
-            if ($data) {
-                \Mail::send("Email.findPwd", ["id" => $data->id, 'token' => $data->token], function ($message) use ($Email) {
-                    $message->subject("找回密码");
-                    $message->to($Email);
-                });
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 $arr = explode("@", $Email);
                 $href = "mail." . $arr[1];
                 return view('Email.findPwdInfo')->with("href", $href);

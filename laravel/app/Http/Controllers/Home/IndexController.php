@@ -24,7 +24,6 @@ class IndexController extends Controller
         }
         //返回数据
         return $newArr;
-
     }
 
     //前台首页
@@ -75,7 +74,6 @@ class IndexController extends Controller
                 }
             }
             //查询对应的商品
-<<<<<<< HEAD
             $value->goods=\DB::table('goods')
                 ->select("goods.*","sku.*")
                 ->join("sku","sku.gid","=","goods.id")
@@ -88,13 +86,6 @@ class IndexController extends Controller
             ->join("sku","sku.gid","=","goods.id")
             ->limit(6)->orderBy('goods.id','desc')->get();
 
-=======
-            $value->goods=\DB::table('goods')->whereIn('cid',$newArr)->limit(8)->get();
-        }
-
-        //明星单品
-        $goods=\DB::table('goods')->limit(6)->orderBy('id','desc')->get();
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         $data=array(
             'slider'=>$slider,
             'ads'=>$ads,

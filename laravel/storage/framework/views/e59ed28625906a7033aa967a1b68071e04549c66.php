@@ -33,7 +33,7 @@
                 <th>ID</th>
                 <th>用户名</th>
                 <th>所属角色</th>
-                <th>加入时间</th>
+                <th>最近一次登录时间</th>
                 <th>状态</th>
                 <th>操作</th>
 
@@ -43,8 +43,7 @@
                         <td><?php echo e($value->id); ?></td>
                         <td><?php echo e($value->name); ?></td>
                         <td><?php echo e($value->display_name); ?></td>
-                        <td><?php echo e(date('Y-m-d H:i:s',$value->updated_time)); ?></td>
-
+                        <td><?php echo e($value->updated_time); ?></td>
                         <?php if($value->status): ?>
                             <td><span class="btn btn-danger" onclick="status(this,<?php echo e($value->id); ?>,1)">禁用</span></td>
                         <?php else: ?>

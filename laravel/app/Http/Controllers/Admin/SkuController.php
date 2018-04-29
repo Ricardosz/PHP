@@ -50,9 +50,6 @@ class SkuController extends Controller
             $propertyid=\DB::table('property')->insertGetId([
                 'value'=>$arr['value'],
             ]);
-
-
-
            \DB::table('sku')->insert([
                 'gid'=>$arr['gid'],
                 'value'=>$propertyid,

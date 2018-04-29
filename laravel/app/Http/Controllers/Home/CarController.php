@@ -11,11 +11,8 @@ class CarController extends Controller
     //加载购物车首页
     public function index()
     {
-<<<<<<< HEAD
 
 
-=======
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         $shop = session('shop');
         return view('home.car')->with('shop', $shop);
     }
@@ -23,19 +20,12 @@ class CarController extends Controller
     //加入购物车
     public function addCar(Request $request)
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
         $a=0;
         $data = session('shop') ? session('shop') : array();
         if ($data) {
             foreach ($data as $key => &$value) {
-<<<<<<< HEAD
                 if ($value['id'] == $_GET['sid']) {
-=======
-                if ($value['id'] == $_GET['id']) {
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                     $value['num'] = $value['num'] + $_GET['num'];
                     $a = 1;
                 }
@@ -43,21 +33,14 @@ class CarController extends Controller
         }
         if (!$a){
             $data[] = array(
-<<<<<<< HEAD
                 "id" => $_GET['sid'],
                 "num" => $_GET['num'],
 
                 'goodsInfo' => \DB::table("sku")
                                 ->select("sku.*")
                                 ->where("sku.id", $_GET['sid'])->first(),
-=======
-                "id" => $_GET['id'],
-                "num" => $_GET['num'],
-                'goodsInfo' => \DB::table('goods')->where("id", $_GET['id'])->first(),
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
             );
         }
-
         $request->session()->put('shop', $data);
         return redirect('car');
     }

@@ -15,7 +15,6 @@ class Role
      */
     public function handle($request, Closure $next,$Premission)
     {
-
         $uid=session("AdminUserInfo.id");
         $role=\App\Http\Service\Com\LoginService::CheckUserRole($uid);
         if ($role->name==$Premission)

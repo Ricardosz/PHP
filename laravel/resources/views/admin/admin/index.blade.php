@@ -35,7 +35,7 @@
                 <th>ID</th>
                 <th>用户名</th>
                 <th>所属角色</th>
-                <th>加入时间</th>
+                <th>最近一次登录时间</th>
                 <th>状态</th>
                 <th>操作</th>
 
@@ -45,8 +45,7 @@
                         <td>{{$value->id}}</td>
                         <td>{{$value->name}}</td>
                         <td>{{$value->display_name}}</td>
-                        <td>{{date('Y-m-d H:i:s',$value->updated_time)}}</td>
-
+                        <td>{{$value->updated_time}}</td>
                         @if($value->status)
                             <td><span class="btn btn-danger" onclick="status(this,{{$value->id}},1)">禁用</span></td>
                         @else

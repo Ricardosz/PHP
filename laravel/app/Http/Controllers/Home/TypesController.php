@@ -31,14 +31,10 @@ class TypesController extends Controller
                 {
                     $newarr[]=$value->id;
                 }
-<<<<<<< HEAD
                 $goods=\DB::table('goods')
                     ->select("sku.*","goods.*")
                     ->join("sku","sku.gid","=","goods.id")
                     ->whereIn("goods.cid",$newarr)->get();
-=======
-                $goods=\DB::table('goods')->whereIn("cid",$newarr)->get();
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 break;
             case '2':
                 $goodClass=\DB::table("types")->where("pid",$id)->get();
@@ -47,7 +43,6 @@ class TypesController extends Controller
                 {
                     $newarr[]=$value->id;
                 }
-<<<<<<< HEAD
                 $goods=\DB::table('goods')
                     ->select("sku.*","goods.*")
                     ->join("sku","sku.gid","=","goods.id")
@@ -58,12 +53,6 @@ class TypesController extends Controller
                     ->select("sku.*","goods.*")
                     ->join("sku","sku.gid","=","goods.id")
                     ->where("goods.cid",$id)->get();
-=======
-                $goods=\DB::table('goods')->whereIn("cid",$newarr)->get();
-                break;
-            case '3':
-                $goods=\DB::table('goods')->where("cid",$id)->get();
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 break;
         }
         //格式化数据

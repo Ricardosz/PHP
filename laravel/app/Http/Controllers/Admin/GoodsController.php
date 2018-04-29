@@ -103,7 +103,6 @@ class GoodsController extends Controller
         return $result;
     }
 
-<<<<<<< HEAD
 
     public static function DelGoods($id)
     {
@@ -115,12 +114,4 @@ class GoodsController extends Controller
         }));
         return $result;
     }
-=======
-    //删除商品
-    public  function destroy()
-    {
-
-    }
-
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
 }

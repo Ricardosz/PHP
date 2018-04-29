@@ -57,7 +57,7 @@ class LoginController extends Controller
                 {
                     //声明数组
                     $arr=[];
-                    $arr['updated_time']=time();
+                    $arr['updated_time']=date('Y-m-d H:i:s', time());
                     $arr['count']=++$data->count;
                     //更新登录信息
                     \DB::table('user')->where('id',$data->id)->update($arr);

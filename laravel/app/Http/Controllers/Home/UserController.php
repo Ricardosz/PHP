@@ -11,8 +11,14 @@ class UserController extends Controller
     //
     public function index()
     {
-         $uid=session("AdminUserInfo.id");
-         $data=user::GetUserInfoByUserid($uid);
-         return view('home.user.user');
+        $uid=session('UserInfo.id');
+
+        if (isset($uid)) {
+            $data = user::GetUserInfoByUserid($uid);
+            return view('home.user.userinfo')->with("data",$data);
+        }else
+            {
+                return redirect('/login');
+            }
     }
 }

@@ -24,9 +24,9 @@ class UserController extends Controller
             $tot = \DB::table("user")->count();
             //从数据库中读取数据
             $data = \DB::table("user")->paginate(10);
-
         }
-      return view("admin.user.index")->with('data',$data)->with('tot',$tot);
+
+      return view("admin.user.index")->with("data",$data)->with('tot',$tot);
     }
 
 

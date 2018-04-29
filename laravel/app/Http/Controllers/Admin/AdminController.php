@@ -179,6 +179,7 @@ class AdminController extends Controller
     //插入角色表
     public  function AddUser_role($arr,$request)
     {
+
         $result=(\DB::transaction(function ()use($arr,$request) {
             $uid= \DB::table('user')->insertGetId([
                 'name'=>$arr['name'],

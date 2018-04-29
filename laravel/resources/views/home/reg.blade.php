@@ -14,11 +14,7 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-<<<<<<< HEAD
                     注册页面
-=======
-                    联想注册页面
->>>>>>> bc22745cc7577ecfc461790f8ac735360a2d4939
                 </div>
                 <div class="panel-body">
                     @if(isset($error))

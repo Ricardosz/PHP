@@ -12,13 +12,24 @@ use App\Http\Controllers\Controller;
 class OrdersController extends Controller
 {
     //订单首页
-    public function index()
+    public function index(Request $request)
     {
+        $search=$request->input('search');
         //相关数据查询(多表查询)
-        $data = \DB::table("orders")->select("orders.*", "orders.code as code", "user.name", "orderstatu.name as ssname")
-            ->join("user", "user.id", "orders.uid")
-            ->join("orderstatu", "orders.sid", "=", "orderstatu.id")
-            ->get();
+        if ($search){
+            $data = \DB::table("orders")->select("orders.*", "orders.code as code", "user.name", "orderstatu.name as ssname")
+                ->join("user", "user.id", "orders.uid")
+                ->join("orderstatu", "orders.sid", "=", "orderstatu.id")
+                ->where("orders.code",$search)
+                ->get();
+
+        }else {
+            $data = \DB::table("orders")->select("orders.*", "orders.code as code", "user.name", "orderstatu.name as ssname")
+                ->join("user", "user.id", "orders.uid")
+                ->join("orderstatu", "orders.sid", "=", "orderstatu.id")
+                ->get();
+        }
+
         //利用数组合并相同key值的数据
         $newArr = array();
         foreach ($data as $key => $value) {

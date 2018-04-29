@@ -38,7 +38,7 @@
 					<td><?php echo e($value->name); ?></td>
 					<td><?php echo e($value->tel); ?></td>
 					<td><?php echo e($value->email); ?></td>
-					<td><?php echo e(date('Y-m-d H:i:s',$value->updated_time)); ?></td>
+					<td><?php echo e($value->created_time); ?></td>
                     <?php if($value->status==0): ?>
                         <td><span class="btn btn-primary">未激活</span></td>
                         <?php elseif($value->status==1): ?>
